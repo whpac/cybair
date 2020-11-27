@@ -1,0 +1,6 @@
+.article--hero-image {box-shadow:0 0 20px 1px rgba(0,0,0,0.4);}
+.article--subtitle {color:rgba(255,255,255,0.6);}
+
+.article--side-panel aside {
+    background:#444; border-color:#2c2c2c; box-shadow:0 0 8px 0 rgba(0,0,0,0.3);
+}

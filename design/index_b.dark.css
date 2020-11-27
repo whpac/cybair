@@ -1,0 +1,31 @@
+/* Stylizacja głównej sekcji strony głównej */
+.main-page--initial--slider-wrapper {box-shadow: 0 0 10px 1px rgba(0,0,0,0.4);}
+.main-page--initial--logo {background:#fff; box-shadow:0 0 20px 0 rgba(0,0,0,0.3);}
+
+/* Stylizacja sekcji "Co robimy" */
+.main-page--activities {background:var(--accent-color-dark); color:rgba(255,255,255,0.95);}
+.main-page--activities--activity {transition:box-shadow 0.3s, background 0.3s;}
+.main-page--activities--activity:hover {background:rgba(255,255,255,0.03);}
+
+.main-page--activities--recent-posts--link {
+    color:rgba(255,255,255,0.95); transition:box-shadow 0.3s, background 0.3s;
+}
+.main-page--activities--recent-posts--link:hover {background:rgba(255,255,255,0.05);}
+
+/* Sekcja "Nasi partnerzy" */
+.main-page--partners {background:var(--accent-color-dark); color:rgba(255,255,255,0.95);}
+.main-page--partners--logo-wide {background:#fff;}
+.main-page--partners--logo-in-row {background:#fff;}
+.main-page--partners--logo-subtitle {color:#000;}
+
+a.main-page--partners--logo-wide, a.main-page--partners--logo-in-row {
+    transition:box-shadow 0.3s;
+}
+a.main-page--partners--logo-wide:hover, a.main-page--partners--logo-in-row:hover {
+    box-shadow:0 0 10px 2px rgba(255,255,255,0.6);
+}
+
+/* Stopka */
+footer {background:#2b2a29; color:#fff;}
+.footer--social-media .round-button {border-color:#fff;}
+.footer--social-media .round-button:hover {background:#fff; color:#2b2a29;}

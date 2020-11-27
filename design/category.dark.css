@@ -1,0 +1,14 @@
+.category--header .subtitle {color:rgba(255,255,255,0.6);}
+
+.category--link {transition:box-shadow 0.3s, background 0.3s;}
+.category--link:hover {box-shadow:0 0 8px 0 rgba(0,0,0,0.4); background:#3b3b3b;}
+.category--link .title {color:#fff;}
+.category--link .text {color:rgba(255,255,255,0.7);}
+
+.category--page-selector .current-page-presenter {color:#ccc;}
+.category--page-selector .page-number-button {color:#ccc;}
+.category--page-selector .page-text-button {color:#ccc;}
+
+.category--side-panel aside {
+    background:#444; border-color:#2c2c2c; box-shadow:0 0 8px 0 rgba(0,0,0,0.3);
+}

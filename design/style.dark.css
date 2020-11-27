@@ -1,0 +1,28 @@
+body {background:#333; color:rgba(255,255,255,0.8);}
+h1, h2, h3 {color:#fff;}
+hr {border-color:#666;}
+
+a {color:var(--accent-color-light);}
+
+.accent-color {color:var(--accent-color);}
+.accent-fill .accent-color {color:rgba(255,255,255,0.95);}
+.accent-fill a {color:rgba(255,255,255,0.95);}
+.accent-fill hr {border-color:#fff;}
+
+.--button {transition:box-shadow 0.3s, background 0.3s;}
+.--button:hover {background:rgba(255,255,255,0.08);}
+
+/* Pasek nawigacyjny */
+.main-navbar {background:#333;}
+.main-navbar.elevated {background:#3b3b3b;}
+.main-navbar.home-page:not(.elevated) {background:transparent;}
+.main-navbar.home-page:not(.elevated) .main-navbar--logo {
+    filter:invert(1) hue-rotate(180deg) drop-shadow(0 0 4px rgba(0,0,0,0.7)) drop-shadow(0 0 0px rgba(0,0,0,0.2));
+}
+.main-navbar.home-page:not(.elevated) .main-navbar--links a {color:#fff; text-shadow:0 0 3px #000;}
+.main-navbar--logo {filter:invert(1) hue-rotate(180deg);}
+
+/* Stopka */
+footer {background:#222; color:#ddd;}
+.footer--social-media .round-button {border-color:#ddd;}
+.footer--social-media .round-button:hover {background:#ddd; color:#222;}
