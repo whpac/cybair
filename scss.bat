@@ -1,0 +1,1 @@
+@sass wordpress/wp-content/themes/cybair/scss:wordpress/wp-content/themes/cybair --style compressed --no-source-map
