@@ -56,13 +56,7 @@ get_header();
                 ?>
                 <a class="main-page--activities--recent-posts--link" href="<?php the_permalink(); ?>">
                     <span class="title"><?php the_title(); ?></span>
-                    <span class="date"><?php
-                    if(date('Yz') == get_the_time('Yz')){
-                        the_time('H:i');
-                    }else{
-                        the_date('d.m.Y'); 
-                    }
-                    ?></span>
+                    <span class="date"><?php cybair_date_list_format(); ?></span>
                 </a>
                 <?php
             }

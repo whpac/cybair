@@ -121,6 +121,8 @@ a.main-page--partners--logo-wide:hover, a.main-page--partners--logo-in-row:hover
 }
 
 /* Stopka */
-footer {background:#2b2a29; color:#fff;}
-.footer--social-media .round-button {border-color:#fff;}
-.footer--social-media .round-button:hover {background:#fff; color:#2b2a29;}
+body.home {
+    footer {background:#2b2a29; color:#fff;}
+    .footer--social-media .round-button {border-color:#fff;}
+    .footer--social-media .round-button:hover {background:#fff; color:#2b2a29;}
+}

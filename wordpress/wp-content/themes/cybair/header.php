@@ -10,9 +10,10 @@
         <script src="https://kit.fontawesome.com/d5eb7e2e08.js" crossorigin="anonymous"></script>
         <?php wp_head(); ?>
     </head>
-    <body>
-        <nav class="main-navbar home-page" id="main-navbar">
-            <a href="index.html" class="main-navbar--logo-wrapper">
+    <body <?php body_class(); ?>>
+        <?php wp_body_open(); ?>
+        <nav class="main-navbar" id="main-navbar">
+            <a href="<?php echo(home_url()); ?>" class="main-navbar--logo-wrapper">
                 <img src="<?php echo(get_theme_file_uri('assets/logo.png')); ?>" class="main-navbar--logo" />
             </a>
             <ul class="main-navbar--links">

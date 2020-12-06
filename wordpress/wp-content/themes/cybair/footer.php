@@ -47,5 +47,6 @@
                 Copyright &copy; 2020, KN CybAiR
             </div>
         </footer>
+        <?php wp_footer(); ?>
     </body>
 </html>

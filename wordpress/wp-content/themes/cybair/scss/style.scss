@@ -41,12 +41,19 @@ a:hover {text-decoration:none;}
     top:0; left:0; right:0; transition:box-shadow 0.3s, background 0.3s;
 }
 .main-navbar.elevated {box-shadow:0 0 16px 0 rgba(0,0,0,0.5);}
-.main-navbar.home-page:not(.elevated) {background:transparent;}
-.main-navbar.home-page:not(.elevated) .main-navbar--logo {
-    filter:drop-shadow(0 0 4px #fff) drop-shadow(0 0 0px rgba(255,255,255,0.5));
+
+body.admin-bar {
+    .main-navbar {top:32px;}
 }
-.main-navbar.home-page .main-navbar--links a {transition:color 0.3s, text-shadow 0.3s;}
-.main-navbar.home-page:not(.elevated) .main-navbar--links a {color:#fff; text-shadow:0 0 3px #000;}
+
+body.home {
+    .main-navbar:not(.elevated) {background:transparent;}
+    .main-navbar:not(.elevated) .main-navbar--logo {
+        filter:drop-shadow(0 0 4px #fff) drop-shadow(0 0 0px rgba(255,255,255,0.5));
+    }
+    .main-navbar .main-navbar--links a {transition:color 0.3s, text-shadow 0.3s;}
+    .main-navbar:not(.elevated) .main-navbar--links a {color:#fff; text-shadow:0 0 3px #000;}
+}
 
 .main-navbar--logo-wrapper {grid-area:logo;}
 .main-navbar--logo {height:48px;}
@@ -101,3 +108,5 @@ footer a {
 }
 
 @import 'index';
+@import 'post';
+@import 'category';
