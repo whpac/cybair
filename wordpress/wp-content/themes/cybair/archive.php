@@ -8,17 +8,21 @@ get_header();
             <span class="subtitle">kategoria ∙ <?php cybair_echo_fnumber($wp_the_query->post_count, 'wpis', '', 'y', 'ów'); ?></span>
         </header>
         <?php
-        while(have_posts()){
-            the_post();
-            $has_image = has_post_thumbnail();
-            ?>
-            <a href="post.html" class="category--link <?php if(!$has_image) echo('no-image') ?>">
-                <?php if($has_image) the_post_thumbnail('thumbnail'); ?>
-                <span class="title"><?php the_title(); ?></span>
-                <span class="text"><?php the_excerpt(); ?></span>
-                <span class="date"><?php cybair_date_list_format(); ?></span>
-            </a>
-            <?php
+        if(have_posts()){
+            while(have_posts()){
+                the_post();
+                $has_image = has_post_thumbnail();
+                ?>
+                <a href="<?php the_permalink(); ?>" class="category--link <?php if(!$has_image) echo('no-image') ?>">
+                    <?php if($has_image) the_post_thumbnail('thumbnail'); ?>
+                    <span class="title"><?php the_title(); ?></span>
+                    <span class="text"><?php the_excerpt(); ?></span>
+                    <span class="date"><?php cybair_date_list_format(); ?></span>
+                </a>
+                <?php
+            }
+        }else{
+            echo('<i class="empty-category">Ta kategoria jest pusta</i>');
         }
 
         $posts_pagination = paginate_links(
@@ -28,24 +32,34 @@ get_header();
                 'next_text' => 'Następna',
             )
         );
-        echo('<pre>');
-        print_r($posts_pagination);
-        echo('</pre>');
+
+        if(count($posts_pagination) > 0){
+            ?>
+            <div class="category--page-selector">
+                <span class="category--page-selector--prev">
+                    <?php
+                    $i = 0;
+                    while(substr($posts_pagination[$i], 0, 2) != '<s' && $i < count($posts_pagination)){
+                        echo($posts_pagination[$i]);
+                        $i++;
+                    }
+                    ?>
+                </span>
+                <span class="category--page-selector--curr">
+                    <?php echo($posts_pagination[$i++]); ?>
+                </span>
+                <span class="category--page-selector--next">
+                    <?php
+                    while($i < count($posts_pagination)){
+                        echo($posts_pagination[$i]);
+                        $i++;
+                    }
+                    ?>
+                </span>
+            </div>
+            <?php
+        }
         ?>
-        <div class="category--page-selector">
-            <span class="category--page-selector--prev">
-                <a href="#" class="page-text-button">Poprzednia</a>
-                <a href="#" class="page-number-button">1</a>
-            </span>
-            <span class="category--page-selector--curr">
-                <span class="current-page-presenter">2</span>
-            </span>
-            <span class="category--page-selector--next">
-                <a href="#" class="page-number-button">3</a>
-                <a href="#" class="page-number-button">4</a>
-                <a href="#" class="page-text-button">Następna</a>
-            </span>
-        </div>
     </div>
     <div class="category--side-panel">
         <aside class="category--side-panel--recent">

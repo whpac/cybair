@@ -17,9 +17,16 @@
                 <img src="<?php echo(get_theme_file_uri('assets/logo.png')); ?>" class="main-navbar--logo" />
             </a>
             <ul class="main-navbar--links">
-                <li><a href="index.html" class="current">Strona główna</a></li>
-                <li><a href="index_b.html">Strona główna 2</a></li>
-                <li><a href="post.html">Artykuł</a></li>
-                <li><a href="category.html">Kategoria</a></li>
+                <?php
+                if(has_nav_menu( 'primary')){
+                    wp_nav_menu(
+                        array(
+                            'container'  => '',
+                            'items_wrap' => '%3$s',
+                            'theme_location' => 'primary',
+                        )
+                    );
+                }
+                ?>
             </ul>
         </nav>

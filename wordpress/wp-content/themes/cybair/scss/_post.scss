@@ -22,7 +22,15 @@ article h1 {
     grid-template-columns:auto 1fr auto;
 }
 
-.article--subtitle--author {grid-column:1;}
+.article--subtitle--author {
+    grid-column:1;
+
+    a {
+        color:inherit; text-decoration:none;
+
+        &:hover {text-decoration:underline;}
+    }
+}
 .article--subtitle--published {grid-column:3; text-align:right;}
 
 .article--side-panel {

@@ -17,7 +17,11 @@ the_post();
             <?php the_title(); ?>
         </h1>
         <div class="article--subtitle">
-            <span class="article--subtitle--author">Autor: <?php the_author(); ?></span>
+            <span class="article--subtitle--author">Autor:
+                <a href="<?php echo(get_author_posts_url(get_the_author_meta('ID'))); ?>">
+                    <?php the_author(); ?>
+                </a>
+            </span>
             <span class="article--subtitle--published">Opublikowano: <?php the_date(); ?> <?php the_time(); ?></span>
         </div>
         <?php

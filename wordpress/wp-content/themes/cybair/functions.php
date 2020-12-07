@@ -34,6 +34,16 @@ function cybair_archive_title($title = '') {
  
 add_filter('get_the_archive_title', 'cybair_archive_title');
 
+function cybair_menus() {
+    $locations = array(
+        'primary'  => 'Menu główne',
+    );
+
+    register_nav_menus($locations);
+}
+
+add_action('init', 'cybair_menus');
+
 function cybair_echo_fnumber($number, $base, $f1, $f2, $f5 = null, $ff = null){
     echo($number.' '.$base.cybair_format_number($number, $f1, $f2, $f5, $ff));
 }
