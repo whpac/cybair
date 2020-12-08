@@ -16,36 +16,20 @@ the_post();
         <h1>
             <?php the_title(); ?>
         </h1>
-        <div class="article--subtitle">
-            <span class="article--subtitle--author">Autor:
+        <div class="article-subtitle">
+            <span class="author">Autor:
                 <a href="<?php echo(get_author_posts_url(get_the_author_meta('ID'))); ?>">
                     <?php the_author(); ?>
                 </a>
             </span>
-            <span class="article--subtitle--published">Opublikowano: <?php the_date(); ?> <?php the_time(); ?></span>
+            <span class="date">Opublikowano: <?php the_date(); ?> <?php the_time(); ?></span>
         </div>
         <?php
             the_content();
         ?>
     </article>
-    <div class="article--side-panel">
-        <aside class="article--side-panel--recent">
-            <h2>Najnowsze</h2>
-            <ul>
-                <?php 
-                $posts_query = new WP_Query('posts_per_page=5');
-                while ($posts_query->have_posts()){
-                    $posts_query->the_post();
-                    ?>
-                    <li>
-                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                    </li>
-                    <?php
-                }
-                wp_reset_postdata();
-                ?>
-            </ul>
-        </aside>
+    <div class="side-panel">
+        <?php include('sidebar.php'); ?>
     </div>
 </main>
 <?php

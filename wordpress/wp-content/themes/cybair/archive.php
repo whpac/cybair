@@ -2,8 +2,8 @@
 get_header();
 ?>
 <main class="category-root">
-    <div class="category--main">
-        <header class="category--header">
+    <div class="content">
+        <header>
             <h1><?php the_archive_title(); ?></h1>
             <span class="subtitle">kategoria ∙ <?php cybair_echo_fnumber($wp_the_query->post_count, 'wpis', '', 'y', 'ów'); ?></span>
         </header>
@@ -13,7 +13,7 @@ get_header();
                 the_post();
                 $has_image = has_post_thumbnail();
                 ?>
-                <a href="<?php the_permalink(); ?>" class="category--link <?php if(!$has_image) echo('no-image') ?>">
+                <a href="<?php the_permalink(); ?>" class="category-link <?php if(!$has_image) echo('no-image') ?>">
                     <?php if($has_image) the_post_thumbnail('thumbnail'); ?>
                     <span class="title"><?php the_title(); ?></span>
                     <span class="text"><?php the_excerpt(); ?></span>
@@ -22,7 +22,7 @@ get_header();
                 <?php
             }
         }else{
-            echo('<i class="empty-category">Ta kategoria jest pusta</i>');
+            echo('<i class="empty-category-info">Ta kategoria jest pusta</i>');
         }
 
         $posts_pagination = paginate_links(
@@ -35,8 +35,8 @@ get_header();
 
         if(count($posts_pagination) > 0){
             ?>
-            <div class="category--page-selector">
-                <span class="category--page-selector--prev">
+            <div class="page-selector">
+                <span class="prev-section">
                     <?php
                     $i = 0;
                     while(substr($posts_pagination[$i], 0, 2) != '<s' && $i < count($posts_pagination)){
@@ -45,10 +45,10 @@ get_header();
                     }
                     ?>
                 </span>
-                <span class="category--page-selector--curr">
+                <span class="curr-section">
                     <?php echo($posts_pagination[$i++]); ?>
                 </span>
-                <span class="category--page-selector--next">
+                <span class="next-section">
                     <?php
                     while($i < count($posts_pagination)){
                         echo($posts_pagination[$i]);
@@ -61,24 +61,8 @@ get_header();
         }
         ?>
     </div>
-    <div class="category--side-panel">
-        <aside class="category--side-panel--recent">
-            <h2>Najnowsze</h2>
-            <ul>
-                <?php 
-                $posts_query = new WP_Query('posts_per_page=5');
-                while ($posts_query->have_posts()){
-                    $posts_query->the_post();
-                    ?>
-                    <li>
-                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                    </li>
-                    <?php
-                }
-                wp_reset_postdata();
-                ?>
-            </ul>
-        </aside>
+    <div class="side-panel">
+        <?php include('sidebar.php'); ?>
     </div>
 </main>
 <?php
