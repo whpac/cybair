@@ -1,0 +1,69 @@
+html {
+    // Kolory motywu
+    --accent-color:#008dd2;
+    --accent-color-dark:#00547d;
+    --accent-color-light:#06adff;
+    --accent-color-very-light:#4ac3ff;
+    --accent-text-color:var(--accent-color);
+    --accent-background:var(--accent-color);
+
+    // Kolory tła i tekstu
+    --background-color:#fff;
+    --text-color:rgba(0,0,0,0.87);
+    --text-secondary-color:rgba(0,0,0,0.6);
+    --text-disabled-color:rgba(0,0,0,0.4);
+    --text-on-accent-color:#fff;
+    --link-text-color:var(--accent-color);
+    --header-text-color:var(--text-color);
+
+    // Kolor linii poziomej
+    --hr-color:#ccc;
+
+    // Czcionki
+    --font-family-main:Lato,Verdana,sans-serif;
+    --font-family-aux:'Roboto Slab','Rockwell Nova',Consolas,serif;
+
+    // Artykuł, kategoria i panel boczny
+    --art-hero-shadow:0 0 1px 1px rgba(0,0,0,0.2), 0 0 8px 1px rgba(0,0,0,0.4);
+    --cat-link-hover-shadow:0 0 8px 0 rgba(0,0,0,0.4);
+    --cat-link-hover-background:initial;
+    --sp-border-color:#ddd;
+    --sp-box-shadow:0 0 8px 0 rgba(0,0,0,0.3);
+    --sp-link-color:var(--link-text-color);
+    --main-shadow:0 0 20px 0 rgba(0,0,0,0.5);
+
+    // Strona główna
+    --hp-hero-shadow:0 0 10px 1px rgba(0,0,0,0.4);
+    --hp-big-logo-background:var(--background-color);
+    --hp-big-logo-filter:unset;
+    --hp-big-logo-shadow:0 0 20px 0 rgba(0,0,0,0.3);
+    --hp-activity-hover-background:transparent;
+    --hp-activity-hover-shadow:0 0 8px 0 rgba(0,0,0,0.3);
+    --hp-activity-active-shadow:0 0 8px 0 rgba(0,0,0,0.3) inset;
+    --hp-recent-link-hover-background:transparent;
+    --hp-more-posts-hover-background:transparent;
+
+    // Logo partnerów na stronie głównej
+    --hp-partner-logo-background:#fff;
+    --hp-partner-logo-text-color:#000;
+    --hp-partner-logo-hover-shadow:0 0 10px 2px rgba(255,255,255,0.6);
+
+    // Pasek nawigacyjny
+    --nav-background:var(--background-color);
+    --nav-elevated-background:var(--nav-background);
+    --nav-elevated-shadow:0 0 16px 0 rgba(0,0,0,0.5);
+    --nav-submenu-background:var(--nav-background);
+    --nav-submenu-hover-background:#e8e8e8;
+    --nav-submenu-text-color:#444;
+    --nav-submenu-shadow:0 0 8px 0 rgba(0,0,0,.3), 0 4px 16px 0 rgba(0,0,0,.4);
+    --nav-logo-filter:unset;
+    --nav-hp-logo-filter:drop-shadow(0 0 4px #fff) drop-shadow(0 0 0px rgba(255,255,255,0.5));
+    --nav-hp-text-color:#fff;
+    --nav-hp-text-shadow:0 0 3px #000;
+
+    // Stopka
+    --footer-background:#eee;
+    --footer-text-color:#666;
+    --footer-hp-background:#2b2a29;
+    --footer-hp-text-color:#fff;
+}

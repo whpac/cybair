@@ -8,15 +8,16 @@
     // Obrazek wyświetlany na górze strony głównej
     .image-wrapper {
         max-width:100%; overflow:hidden; grid-area:hero-image; font-size:0;
-        box-shadow: 0 0 10px 1px rgba(0,0,0,0.4);
+        box-shadow:var(--hp-hero-shadow);
     
         img {object-fit:cover; max-height:45vh; width:100%;}
     }
 
     // Logo wyświetlane na środku strony głównej
     .big-logo {
-        width:33vw; margin-top:-6.5vw; grid-area:logo; background:white; display:block; justify-self:center;
-        padding:15px; border-radius:10px; box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+        width:33vw; margin-top:-6.5vw; grid-area:logo; background:var(--hp-big-logo-background);
+        display:block; justify-self:center; padding:1.5vw 2.5vw; border-radius:10px;
+        box-shadow:var(--hp-big-logo-shadow); filter:var(--hp-big-logo-filter);
     }
 
     // Nazwa koła i podtytuł
@@ -29,7 +30,7 @@
  * Stylizacja sekcji "Co robimy"
  */
 .main-page--activities {
-    background:var(--accent-color); color:#fff;
+    background:var(--accent-background); color:var(--text-on-accent-color);
 
     // Kontener do podziału na dwie kolumny - kafelki i ostatnie wpisy
     .column-wrapper {
@@ -39,7 +40,7 @@
         // Kontener na "kafelki" z aktywnościami
         .link-grid {
             display:grid; grid-template-columns:repeat(4, 1fr); grid-template-rows:repeat(2, 1fr);
-            --activity-tile-width:calc(20vw - 20px/3); gap:10px; grid-area:link-grid;
+            --hp-activity-tile-width:calc(20vw - 20px/3); gap:10px; grid-area:link-grid;
         }
 
         // Lista ostatnich wpisów
@@ -51,10 +52,10 @@
     // Kafelek aktywności
     .activity {
         display:grid; grid-template-rows:auto 1fr; padding:25px; color:inherit; text-decoration:none;
-        transition:box-shadow 0.3s; grid-column-end:span 2;
+        transition:box-shadow 0.3s, background 0.3s; grid-column-end:span 2;
 
-        &:hover {box-shadow:0 0 8px 0 rgba(0,0,0,0.3);}
-        &:active {box-shadow:0 0 8px 0 rgba(0,0,0,0.3) inset;}
+        &:hover {box-shadow:var(--hp-activity-hover-shadow); background:var(--hp-activity-hover-background);}
+        &:active {box-shadow:var(--hp-activity-active-shadow);}
 
         // W przypadku niepełnego wiersza kafelków te klasy służą do przesuwania ich w poziomie
         &.indent-by-half {grid-column-start:2;}
@@ -62,13 +63,13 @@
 
         // Obrazek
         img {
-            --image-size:calc(var(--activity-tile-width) / 2); width:var(--image-size); height:var(--image-size);
+            --image-size:calc(var(--hp-activity-tile-width) / 2); width:var(--image-size); height:var(--image-size);
             object-fit:cover; border-radius:50%; justify-self:center; display:block;
             transition:width 0.3s, height 0.3s, margin 0.3s;
         }
         &:hover img {
-            --image-size:calc(var(--activity-tile-width) * 1.1 / 2);
-            margin:calc(var(--activity-tile-width) * -0.05 / 2);
+            --image-size:calc(var(--hp-activity-tile-width) * 1.1 / 2);
+            margin:calc(var(--hp-activity-tile-width) * -0.05 / 2);
         }
 
         // Podpis w kafelku
@@ -79,15 +80,16 @@
 
     // Link do jednego z ostatnich wpisów
     .recent-post-link {
-        color:#fff; text-decoration:none; display:grid; grid-template-columns:1fr auto;
-        transition:box-shadow 0.3s; padding:8px 12px; margin-bottom:4px; column-gap:8px;
+        color:var(--text-on-accept-color); text-decoration:none; display:grid;
+        grid-template-columns:1fr auto; transition:box-shadow 0.3s, background 0.3s;
+        padding:8px 12px; margin-bottom:4px; column-gap:8px;
 
-        &:hover {box-shadow:0 0 8px 0 rgba(0,0,0,0.3);}
-        &:active {box-shadow:0 0 8px 0 rgba(0,0,0,0.3) inset;}
+        &:hover {box-shadow:var(--hp-activity-hover-shadow); background:var(--hp-recent-link-hover-background);}
+        &:active {box-shadow:var(--hp-activity-active-shadow);}
 
         // Tytuł i data opublikowania wpisu
         .title {
-            font-family:'Roboto Slab',serif; grid-column:1; grid-row:1; font-size:1.1em;
+            font-family:var(--font-family-aux); grid-column:1; grid-row:1; font-size:1.1em;
             text-overflow:ellipsis; overflow:hidden; white-space:nowrap; text-align:left;
         }
         .date {
@@ -98,15 +100,11 @@
 
     // Przycisk "Więcej" pod listą ostatnich wpisów
     .recent-posts-more {
-        display:inline-block; transition:box-shadow 0.3s; padding:8px 16px;
+        display:inline-block; transition:box-shadow 0.3s, background 0.3s; padding:8px 16px;
         text-decoration:none; margin-left:auto; margin-right:auto;
-    
-        &:hover {
-            box-shadow:0 0 8px 0 rgba(0,0,0,0.3);
-        }
-        &:active {
-            box-shadow:0 0 8px 0 rgba(0,0,0,0.3) inset;
-        }
+
+        &:hover {box-shadow:var(--hp-activity-hover-shadow); background:var(--hp-more-posts-hover-background);}
+        &:active {box-shadow:var(--hp-activity-active-shadow);}
     }
 }
 
@@ -127,7 +125,7 @@
  * Stylizacja sekcji "Nasi partnerzy"
  */
 .main-page--partners {
-    background:var(--accent-color); color:#fff;
+    background:var(--accent-background); color:var(--text-on-accent-color);
 
     h2:not(:first-of-type) {
         margin-top:1.5em;
@@ -135,8 +133,8 @@
 
     // Szerokie logo (bez podpisu)
     .logo-wide {
-        background:#fff; display:block; margin:0 30vw; padding:12px 30px; text-align:center;
-        border-radius:12px;
+        background:var(--hp-partner-logo-background); display:block; margin:0 30vw;
+        padding:12px 30px; text-align:center; border-radius:12px;
 
         img {
             max-width:100%; max-height:100px;
@@ -151,14 +149,14 @@
 
     // Logo z podpisem
     .logo {
-        background:#fff; padding:10px; border-radius:12px; width:150px;
+        background:var(--hp-partner-logo-background); padding:10px; border-radius:12px; width:150px;
         display:grid; grid-template-rows:6vw auto; gap:5px; text-decoration:none;
 
         img {
             max-width:100%; max-height:100%; grid-row:1; place-self:center;
         }
         .subtitle {
-            grid-row:2; text-align:center; align-self:center; color:#000;
+            grid-row:2; text-align:center; align-self:center; color:var(--hp-partner-logo-text-color);
             font-weight:700; font-size:0.85em;
         }
     }
@@ -167,6 +165,6 @@
     a.logo-wide, a.logo {
         transition:box-shadow 0.3s;
 
-        &:hover {box-shadow:0 0 10px 2px rgba(255,255,255,0.6);}
+        &:hover {box-shadow:var(--hp-partner-logo-hover-shadow);}
     }
 }

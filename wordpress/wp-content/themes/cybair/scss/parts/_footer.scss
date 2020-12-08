@@ -2,9 +2,9 @@
  * Stylizacja stopki
  */
 footer {
-    background:#eee; color:#666; padding:30px 20vw; text-align:center; display:grid;
-    grid-template-rows:auto 1fr auto; grid-template-columns:1fr 1fr; row-gap:25px;
-    grid-template-areas:'address contact' 'social contact' 'copyright copyright';
+    background:var(--footer-background); color:var(--footer-text-color); padding:30px 20vw;
+    text-align:center; display:grid; grid-template-rows:auto 1fr auto; grid-template-columns:1fr 1fr;
+    row-gap:25px; grid-template-areas:'address contact' 'social contact' 'copyright copyright';
 
     a {color:inherit; text-decoration:none;}
 }
@@ -32,16 +32,15 @@ footer {
 
 // Przyciski mediów społecznościowych
 .footer--social-media .round-button {
-    display:inline-block; border:2px solid #666; border-radius:50%; font-size:1.25rem;
-    line-height:1em; width:3rem; height:3rem; box-sizing:border-box; margin:5px;
-    padding:0.7rem 0; transition:background 0.3s, color 0.3s;
+    display:inline-block; border:2px solid var(--footer-text-color); border-radius:50%;
+    font-size:1.25rem; line-height:1em; width:3rem; height:3rem; box-sizing:border-box;
+    margin:5px; padding:0.7rem 0; transition:background 0.3s, color 0.3s;
 
-    &:hover {background:#666; color:#eee;}
+    &:hover {background:var(--footer-text-color); color:var(--footer-background);}
 }
 
 // Stopka na stronie głównej jest ciemna
 body.home {
-    footer {background:#2b2a29; color:#fff;}
-    .footer--social-media .round-button {border-color:#fff;}
-    .footer--social-media .round-button:hover {background:#fff; color:#2b2a29;}
+    --footer-background:var(--footer-hp-background);
+    --footer-text-color:var(--footer-hp-text-color);
 }

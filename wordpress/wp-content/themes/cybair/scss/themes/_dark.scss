@@ -1,0 +1,50 @@
+html {
+    // Kolory motywu
+    --accent-text-color:var(--accent-color-light);
+    --accent-background:var(--accent-color-dark);
+
+    // Kolory tła i tekstu
+    --background-color:#333;
+    --text-color:rgba(255,255,255,0.8);
+    --text-secondary-color:rgba(255,255,255,0.6);
+    --text-disabled-color:rgba(255,255,255,0.4);
+    --text-on-accent-color:rgba(255,255,255,0.95);
+    --link-text-color:var(--accent-color-light);
+    --header-text-color:#fff;
+
+    // Kolor linii poziomej
+    --hr-color:#666;
+
+    // Artykuł, kategoria i panel boczny
+    --art-hero-shadow:0 0 20px 1px rgba(0,0,0,0.4);
+    --cat-link-hover-background:#3b3b3b;
+    --sp-border-color:#2c2c2c;
+    --sp-background:#444;
+    --sp-link-color:var(--accent-color-very-light);
+
+    // Strona główna
+    --hp-big-logo-background:#c0c0c0;
+    --hp-big-logo-filter:invert(1) hue-rotate(180deg);
+    --hp-big-logo-shadow:0 0 20px 0 rgba(255,255,255,0.3);
+    --hp-activity-hover-background:rgba(255,255,255,0.03);
+    --hp-recent-link-hover-background:rgba(255,255,255,0.05);
+    --hp-more-posts-hover-background:rgba(255,255,255,0.08);
+
+    // Pasek nawigacyjny
+    --nav-elevated-background:#3b3b3b;
+    --nav-elevated-shadow:0 0 16px 0 rgba(0,0,0,0.5);
+    --nav-submenu-background:#444;
+    --nav-submenu-hover-background:#333;
+    --nav-submenu-text-color:#eee;
+    --nav-submenu-shadow:0 0 8px 0 rgba(0,0,0,.3), 0 4px 16px 0 rgba(0,0,0,.4);
+    --nav-logo-filter:invert(1) hue-rotate(180deg);
+    --nav-hp-logo-filter:invert(1) hue-rotate(180deg) drop-shadow(0 0 4px rgba(0,0,0,0.7)) drop-shadow(0 0 0px rgba(0,0,0,0.2));
+    --nav-hp-text-color:#fff;
+    --nav-hp-text-shadow:0 0 3px #000;
+
+    // Stopka
+    --footer-background:#2b2a29;
+    --footer-text-color:#fff;
+    --footer-hp-background:#2b2a29;
+    --footer-hp-text-color:#fff;
+}

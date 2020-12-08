@@ -5,6 +5,11 @@
     Version: 1.0
 */
 
+@import 'themes/light';
+@media only screen and (prefers-color-scheme: dark){
+    @import 'themes/dark';
+}
+
 @import 'general';
 @import 'parts/navbar';
 @import 'parts/footer';

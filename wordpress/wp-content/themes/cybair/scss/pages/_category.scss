@@ -9,9 +9,9 @@
     .content {grid-area:main;}
 
     // Tytuł i podtytuł
-    h1 {font-size:2.25rem; border-bottom:3px solid var(--accent-color);}
+    h1 {font-size:2.25rem; border-bottom:3px solid var(--accent-text-color);}
     .subtitle {
-        font-size:0.85em; color:rgba(0,0,0,0.6); margin-top:-14px; display:block;
+        font-size:0.85em; color:var(--text-secondary-color); margin-top:-14px; display:block;
         text-align:center;
     }
 }
@@ -21,7 +21,7 @@
     color:inherit; text-decoration:none; display:grid; gap:5px 15px;
     grid-template-columns:auto 1fr auto; grid-template-rows:auto auto;
     grid-template-areas:'image title date' 'image subtitle subtitle';
-    padding:12px; margin:16px 0; transition:box-shadow 0.3s;
+    padding:12px; margin:16px 0; transition:box-shadow 0.3s, background 0.3s;
 
     // Ilustracja
     .attachment-thumbnail {
@@ -32,7 +32,7 @@
         grid-area:title; font-size:1.75rem; font-family:'Roboto Slab','Rockwell Nova',Consolas,serif;
     }
     .text {
-        grid-area:subtitle;color:rgba(0,0,0,0.7);
+        grid-area:subtitle;color:var(--text-secondary-color);
     
         p:first-child {margin-top:0;}
         p:last-child {margin-bottom:0;}
@@ -43,7 +43,7 @@
         grid-template-columns:1fr auto;
         grid-template-areas:'title date' 'subtitle subtitle';
     }
-    &:hover {box-shadow:0 0 8px 0 rgba(0,0,0,0.4);}
+    &:hover {box-shadow:var(--cat-link-hover-shadow); background:var(--cat-link-hover-background);}
 }
 
 // Linki do poszczególnych stron kategorii
@@ -59,7 +59,7 @@
     // Pojedynczy przycisk do strony
     .page-numbers {
         display:inline-block; font-weight:bold; height:1.75em; box-sizing:border-box;
-        border:1px solid transparent; text-align:center; line-height:1.2em; color:#444;
+        border:1px solid transparent; text-align:center; line-height:1.2em; color:var(--text-color);
         padding:0.15rem 0.525rem 0.3rem 0.525rem; border-radius:0.875em; text-decoration:none;
         margin:0 3px; transition:border-color 0.3s, box-shadow 0.3s;
 
@@ -71,5 +71,5 @@
 
 // Informacja o tym, że kategoria jest pusta
 .empty-category-info {
-    display:block; text-align:center; color:#999; margin-top:64px; font-size:1.5em;
+    display:block; text-align:center; color:var(--text-disabled-color); margin-top:64px; font-size:1.5em;
 }

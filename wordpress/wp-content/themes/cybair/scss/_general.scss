@@ -2,30 +2,32 @@
  * Ogólne deklaracje stylów
  */
 
-html {--accent-color:#008dd2; --accent-color-dark:#00547d; --accent-color-light:#06adff;}
 body {
-    margin:0; font-family:Lato,Verdana,sans-serif; font-size:16px; color:rgba(0,0,0,0.87);
+    background:var(--background-color); color:var(--text-color);
+    margin:0; font-family:var(--font-family-main); font-size:16px; 
 }
 
-hr {border:0 solid #ccc; border-top-width:1px; width:60%;}
-h1, h2, h3 {font-family:'Roboto Slab','Rockwell Nova',Consolas,serif; text-align:center; margin:0.2em 0 0.5em 0;}
+hr {border:0 solid var(--hr-color); border-top-width:1px; width:60%;}
+h1, h2, h3 {
+    font-family:var(--font-family-aux); color:var(--header-text-color);
+    text-align:center; margin:0.2em 0 0.5em 0;
+}
 h1 {font-size:3rem;}
 h2 {font-size:1.5rem;}
 section {padding:30px 0 40px 0;}
 
 a {
-    color:var(--accent-color); text-decoration:underline;
+    color:var(--link-text-color); text-decoration:underline;
 
     &:hover {text-decoration:none;}
 }
 
-.accent-color {color:var(--accent-color);}
+.accent-color {color:var(--accent-text-color);}
 .accent-fill {
-    .accent-color {color:#fff;}
-    a {color:#fff;}
-    hr {border-color:#fff;}
+    .accent-color, a {color:var(--text-on-accent-color);}
+    hr {border-color:var(--text-on-accent-color);}
 }
 
 main {
-    padding-top:calc(5vh + 64px); box-shadow:0 0 20px 0 rgba(0,0,0,0.5); z-index:1; position:relative;
+    padding-top:calc(5vh + 64px); box-shadow:var(--main-shadow); z-index:1; position:relative;
 }
