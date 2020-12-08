@@ -17,7 +17,9 @@ function cybair_date_list_format(){
 }
 
 function cybair_archive_title($title = '') {
-    if(is_category()){
+    if(is_home()){
+        $title = 'Wszystkie wpisy';
+    }elseif(is_category()){
         $title = single_cat_title('', false);
     }elseif(is_tag()){
         $title = single_tag_title('', false);
@@ -28,7 +30,7 @@ function cybair_archive_title($title = '') {
     }elseif(is_tax()){
         $title = single_term_title('', false);
     }
-  
+
     return $title;
 }
  

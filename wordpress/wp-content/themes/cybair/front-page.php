@@ -62,7 +62,7 @@ get_header();
             }
             wp_reset_postdata();
             ?>
-            <a class="recent-posts-more" href="category.html">
+            <a class="recent-posts-more" href="<?php echo(get_permalink(get_option('page_for_posts'))); ?>">
                 Więcej wpisów
             </a>
         </div>
