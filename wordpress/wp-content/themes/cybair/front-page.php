@@ -6,44 +6,47 @@ get_header();
         <img src="<?php echo(get_theme_file_uri('assets/slider.jpg')); ?>" />
     </div>
     <img class="big-logo" src="<?php echo(get_theme_file_uri('assets/logo.png')); ?>" />
-    <h1 class="title">Koło naukowe <span class="accent-color">CybAiR</span></h1>
+    <h1 class="title long">Koło naukowe <span class="accent-color">CybAiR</span></h1>
+    <h1 class="title short">KN <span class="accent-color">CybAiR</span></h1>
     <hr />
     <span class="subtitle">
-        Robotyka
-        <span class="accent-color">&bull;</span>
-        Pojazy autonomiczne
-        <span class="accent-color">&bull;</span>
-        Automatyka
+        <span class="area-of-interest">Robotyka</span>
+        <span class="accent-color separator">&bull;</span>
+        <span class="area-of-interest">Pojazy autonomiczne</span>
+        <span class="accent-color separator">&bull;</span>
+        <span class="area-of-interest">Automatyka</span>
     </span>
 </section>
 <section class="main-page--activities accent-fill">
     <h1>Co robimy?</h1>
     <div class="column-wrapper">
-        <div class="link-grid">
-            <a class="activity" href="category.html">
-                <img src="<?php echo(get_theme_file_uri('assets/activities1.jpg')); ?>" />
-                <span class="subtitle">
-                    Konferencje i wydarzenia
-                </span>
-            </a>
-            <a class="activity" href="category.html">
-                <img src="<?php echo(get_theme_file_uri('assets/activities2.jpg')); ?>" />
-                <span class="subtitle">
-                    Sekcje naukowe
-                </span>
-            </a>
-            <a class="activity" href="category.html">
-                <img src="<?php echo(get_theme_file_uri('assets/activities3.png')); ?>" />
-                <span class="subtitle">
-                    Warsztaty
-                </span>
-            </a>
-            <a class="activity" href="category.html">
-                <img src="<?php echo(get_theme_file_uri('assets/activities4.jpg')); ?>" />
-                <span class="subtitle">
-                    Projekty naukowe
-                </span>
-            </a>
+        <div class="link-grid-wrapper">
+            <div class="link-grid">
+                <a class="activity" href="category.html">
+                    <img src="<?php echo(get_theme_file_uri('assets/activities1.jpg')); ?>" />
+                    <span class="subtitle">
+                        Konferencje i wydarzenia
+                    </span>
+                </a>
+                <a class="activity" href="category.html">
+                    <img src="<?php echo(get_theme_file_uri('assets/activities2.jpg')); ?>" />
+                    <span class="subtitle">
+                        Sekcje naukowe
+                    </span>
+                </a>
+                <a class="activity" href="category.html">
+                    <img src="<?php echo(get_theme_file_uri('assets/activities3.png')); ?>" />
+                    <span class="subtitle">
+                        Warsztaty
+                    </span>
+                </a>
+                <a class="activity" href="category.html">
+                    <img src="<?php echo(get_theme_file_uri('assets/activities4.jpg')); ?>" />
+                    <span class="subtitle">
+                        Projekty naukowe
+                    </span>
+                </a>
+            </div>
         </div>
         <div class="recent-posts">
             <h2>Najnowsze wpisy</h2>
@@ -97,7 +100,7 @@ get_header();
         </div>
     </div>
 </section>
-<section class="main-page--partners">
+<section class="main-page--partners accent-fill">
     <h1>Nasi partnerzy</h1>
     <h2>Alma mater</h2>
     <a class="logo-wide" href="https://www.put.poznan.pl/">
@@ -107,20 +110,23 @@ get_header();
     <div class="logo-row">
         <a class="logo" href="https://www.creef.put.poznan.pl/">
             <img src="<?php echo(get_theme_file_uri('assets/logo_warie.jpeg')); ?>" />
+            <span class="separator"></span>
             <span class="subtitle">
-                Faculty of Electrical Engineering of PUT
+                Faculty of&nbsp;Electrical Engineering&nbsp;of&nbsp;PUT
             </span>
         </a>
         <a class="logo" href="https://www.cie.put.poznan.pl/">
             <img src="<?php echo(get_theme_file_uri('assets/logo_irim.png')); ?>" />
+            <span class="separator"></span>
             <span class="subtitle">
-                Institute of Robotics and Machine Intelligence
+                Institute of&nbsp;Robotics and&nbsp;Machine&nbsp;Intelligence
             </span>
         </a>
         <div class="logo">
             <img src="<?php echo(get_theme_file_uri('assets/logo_ppil.png')); ?>" />
+            <span class="separator"></span>
             <span class="subtitle">
-                Perception for Physical Interaction Laboratory
+                Perception for&nbsp;Physical Interaction&nbsp;Laboratory
             </span>
         </div>
     </div>

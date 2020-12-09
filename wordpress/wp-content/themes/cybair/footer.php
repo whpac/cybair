@@ -6,19 +6,21 @@
             </div>
             <div class="footer--social-media">
                 <h2>Tu też jesteśmy!</h2>
-                <a class="round-button" href="https://www.facebook.com/CybAiR/">
-                    <i class="fab fa-fw fa-facebook-f"></i>
-                </a>
-                <a class="round-button" href="https://www.instagram.com/kncybair">
-                    <i class="fab fa-fw fa-instagram"></i>
-                </a><br />
-                <a class="round-button"
-                    href="https://drive.google.com/drive/folders/1Xd6vn1FPBq0XZmLeGZquNhrbC4-76fCo?usp=sharing">
-                    <i class="fab fa-fw fa-google-drive"></i>
-                </a>
-                <a class="round-button" href="https://github.com/orgs/kn-cybair/">
-                    <i class="fab fa-fw fa-github"></i>
-                </a>
+                <div class="social-buttons">
+                    <a class="round-button" href="https://www.facebook.com/CybAiR/">
+                        <i class="fab fa-fw fa-facebook-f"></i>
+                    </a>
+                    <a class="round-button" href="https://www.instagram.com/kncybair">
+                        <i class="fab fa-fw fa-instagram"></i>
+                    </a>
+                    <a class="round-button"
+                        href="https://drive.google.com/drive/folders/1Xd6vn1FPBq0XZmLeGZquNhrbC4-76fCo?usp=sharing">
+                        <i class="fab fa-fw fa-google-drive"></i>
+                    </a>
+                    <a class="round-button" href="https://github.com/orgs/kn-cybair/">
+                        <i class="fab fa-fw fa-github"></i>
+                    </a>
+                </div>
             </div>
             <div class="footer--contact">
                 <h2>Kontakt</h2>
@@ -44,7 +46,7 @@
                 </div>
             </div>
             <div class="footer--copyright">
-                Copyright &copy; 2020, KN CybAiR
+                Copyright &copy; 2021, KN CybAiR
             </div>
         </footer>
         <?php wp_footer(); ?>

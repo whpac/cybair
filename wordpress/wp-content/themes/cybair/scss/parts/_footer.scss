@@ -7,6 +7,12 @@ footer {
     row-gap:25px; grid-template-areas:'address contact' 'social contact' 'copyright copyright';
 
     a {color:inherit; text-decoration:none;}
+    h1, h2, h3 {color:inherit;}
+
+    @include only-phone {
+        padding:30px; grid-template-columns:1fr; grid-template-rows:repeat(4, auto);
+        grid-template-areas:'address' 'contact' 'social' 'copyright';
+    }
 }
 
 // Obszary stopki
@@ -15,6 +21,13 @@ footer {
 }
 .footer--social-media {
     grid-area:social;
+
+    .social-buttons {
+        display:grid; grid-template-rows:auto auto; grid-template-columns:auto auto;
+        justify-content:center;
+
+        @include only-phone {grid-template-columns:repeat(4, auto); grid-template-rows:auto;}
+    }
 }
 .footer--contact {
     grid-area:contact;

@@ -12,7 +12,11 @@ h1, h2, h3 {
     font-family:var(--font-family-aux); color:var(--header-text-color);
     text-align:center; margin:0.2em 0 0.5em 0;
 }
-h1 {font-size:3rem;}
+h1 {
+    font-size:3rem;
+
+    @include only-phone {font-size:2.25em;}
+}
 h2 {font-size:1.5rem;}
 section {padding:30px 0 40px 0;}
 
@@ -26,6 +30,7 @@ a {
 .accent-fill {
     .accent-color, a {color:var(--text-on-accent-color);}
     hr {border-color:var(--text-on-accent-color);}
+    h1, h2, h3 {color:var(--text-on-accent-color);}
 }
 
 main {

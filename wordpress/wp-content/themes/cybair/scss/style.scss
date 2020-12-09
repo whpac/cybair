@@ -5,6 +5,8 @@
     Version: 1.0
 */
 
+@import 'media';
+
 @import 'themes/light';
 @media only screen and (prefers-color-scheme: dark){
     @import 'themes/dark';

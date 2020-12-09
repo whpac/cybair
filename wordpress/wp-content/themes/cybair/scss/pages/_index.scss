@@ -10,7 +10,7 @@
         max-width:100%; overflow:hidden; grid-area:hero-image; font-size:0;
         box-shadow:var(--hp-hero-shadow);
     
-        img {object-fit:cover; max-height:45vh; width:100%;}
+        img {object-fit:cover; height:45vh; width:100%;}
     }
 
     // Logo wyświetlane na środku strony głównej
@@ -18,12 +18,24 @@
         width:33vw; margin-top:-6.5vw; grid-area:logo; background:var(--hp-big-logo-background);
         display:block; justify-self:center; padding:1.5vw 2.5vw; border-radius:10px;
         box-shadow:var(--hp-big-logo-shadow); filter:var(--hp-big-logo-filter);
+
+        @include only-phone {
+            width:90vw; margin-top:-15.5vw;
+        }
     }
 
     // Nazwa koła i podtytuł
     .title {grid-area:title; justify-self:center; font-size:3rem; margin:0.83em 0 0 0;}
-    .subtitle {grid-area:subtitle; justify-self:center; font-size:1.25rem;}
+    .title.short {display:none;}
+    .subtitle {grid-area:subtitle; justify-self:center; font-size:1.25rem; text-align:center}
     hr {grid-area:hr; margin:1.2rem auto;}
+
+    @include only-phone {
+        .title.short {display:block;}
+        .title.long {display:none;}
+        .area-of-interest {display:block;}
+        .separator {display:none;}
+    }
 }
 
 /**
@@ -37,25 +49,51 @@
         display:grid; grid-template-columns:2fr 1fr; padding:0 15vw; gap:20px;
         grid-template-areas:'link-grid recent-posts';
 
+        .link-grid-wrapper {
+            grid-area:link-grid;
+
+            @include only-phone {
+                width:100%; overflow:auto;
+            }
+        }
+
         // Kontener na "kafelki" z aktywnościami
         .link-grid {
             display:grid; grid-template-columns:repeat(4, 1fr); grid-template-rows:repeat(2, 1fr);
-            --hp-activity-tile-width:calc(20vw - 20px/3); gap:10px; grid-area:link-grid;
+            --hp-activity-tile-width:calc(20vw - 20px/3); gap:10px;
         }
 
         // Lista ostatnich wpisów
         .recent-posts {
             grid-area:recent-posts; padding-top:20px; text-align:center;
         }
+
+        @include only-phone {
+            padding:0; gap:20px; grid-template-rows:auto auto; grid-template-columns:auto;
+            grid-template-areas:'link-grid' 'recent-posts';
+
+            .link-grid {
+                --hp-activity-tile-width:60vw; width:fit-content; gap:48px;
+                padding:0 calc(50vw - var(--hp-activity-tile-width) / 2); padding-bottom:12px;
+                grid-template-rows:auto; grid-auto-flow:column;
+            }
+            .recent-posts {padding:0 30px;}
+        }
     }
 
     // Kafelek aktywności
     .activity {
         display:grid; grid-template-rows:auto 1fr; padding:25px; color:inherit; text-decoration:none;
-        transition:box-shadow 0.3s, background 0.3s; grid-column-end:span 2;
+        transition:box-shadow 0.3s, background 0.3s; grid-column-end:span 2; width:var(--hp-activity-tile-width);
 
         &:hover {box-shadow:var(--hp-activity-hover-shadow); background:var(--hp-activity-hover-background);}
         &:active {box-shadow:var(--hp-activity-active-shadow);}
+
+        @include only-phone {
+            grid-column-end:span 1; padding:0;
+
+            &:hover, &:active {box-shadow:none; background:transparent;}
+        }
 
         // W przypadku niepełnego wiersza kafelków te klasy służą do przesuwania ich w poziomie
         &.indent-by-half {grid-column-start:2;}
@@ -66,15 +104,26 @@
             --image-size:calc(var(--hp-activity-tile-width) / 2); width:var(--image-size); height:var(--image-size);
             object-fit:cover; border-radius:50%; justify-self:center; display:block;
             transition:width 0.3s, height 0.3s, margin 0.3s;
+
+            @include only-phone {
+                width:100%; height:calc(var(--hp-activity-tile-width) / 1.618); border-radius:12px;
+                transition:none;
+            }
         }
         &:hover img {
             --image-size:calc(var(--hp-activity-tile-width) * 1.1 / 2);
             margin:calc(var(--hp-activity-tile-width) * -0.05 / 2);
+
+            @include only-phone {
+                margin:0;
+            }
         }
 
         // Podpis w kafelku
         .subtitle {
             justify-self:center; text-align:center; font-weight:700; padding:15px 0 0 0;
+
+            @include only-phone {padding-top:5px;}
         }
     }
 
@@ -114,7 +163,12 @@
  */
 .main-page--about {
     .column-wrapper {
-        display:grid; grid-template-columns:repeat(3, 1fr); gap:20px; padding:0 15vw;
+        display:grid; grid-template-columns:repeat(3, 1fr); gap:40px; padding:0 15vw;
+
+        @include only-phone{
+            grid-template-columns:1fr; grid-template-rows:repeat(3, auto);
+            padding:0 30px;
+        }
     }
     .column {
         text-align:center; font-size:1.2em; line-height:1.4em;
@@ -133,18 +187,22 @@
 
     // Szerokie logo (bez podpisu)
     .logo-wide {
-        background:var(--hp-partner-logo-background); display:block; margin:0 30vw;
-        padding:12px 30px; text-align:center; border-radius:12px;
+        background:var(--hp-partner-logo-background); display:grid; align-content:center;
+        margin:0 30vw; padding:12px 30px; text-align:center; border-radius:12px;
 
         img {
             max-width:100%; max-height:100px;
         }
+
+        @include only-phone {margin:0 40px; height:64px;}
     }
 
     // Rządek logo
     .logo-row {
         display:grid; grid-auto-flow:column; grid-auto-columns:auto; justify-content:center;
         gap:15px;
+
+        @include only-phone {grid-auto-flow:row; justify-content:stretch;}
     }
 
     // Logo z podpisem
@@ -155,9 +213,22 @@
         img {
             max-width:100%; max-height:100%; grid-row:1; place-self:center;
         }
+        .separator {display:none;}
         .subtitle {
             grid-row:2; text-align:center; align-self:center; color:var(--hp-partner-logo-text-color);
             font-weight:700; font-size:0.85em;
+        }
+
+        @include only-phone {
+            margin:0 40px; height:64px; width:auto; grid-template-columns:64px 1px auto; gap:20px;
+            grid-template-rows:1fr; padding:12px 16px;
+
+            img {grid-column:1; grid-row:1;}
+            .separator {
+                grid-column:2; grid-row:1; display:block;
+                border-left:1px solid var(--hp-partner-logo-separator-color);
+            }
+            .subtitle {grid-column:3; grid-row:1; font-size:0.95em;}
         }
     }
 
