@@ -61,4 +61,9 @@ function cybair_format_number($n, $f1, $f2, $f5 = null, $ff = null){
 
     return $f5;
 }
+
+function cybair_excerpt_length( $length ) {
+    return 25;
+}
+add_filter('excerpt_length', 'cybair_excerpt_length', 999);
 ?>

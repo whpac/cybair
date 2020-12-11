@@ -15,10 +15,13 @@
         text-align:center;
     }
 
-    @include only-phone {
-        grid-template-rows:auto auto; grid-template-columns:12px 1fr 12px;
+    @include phone-and-tablet {
+        grid-template-rows:auto auto;
         grid-template-areas:'left-margin main right-margin' 'left-margin side-panel right-margin';
     }
+    @include only-phone {grid-template-columns:12px 1fr 12px;}
+    @include only-tablet {grid-template-columns:10vw 1fr 10vw;}
+    @include only-narrow-laptop {grid-template-columns:7.5vw 1fr 2.5vw 230px 2.5vw;}
 }
 
 // Link do wpisu
@@ -34,7 +37,7 @@
         object-fit:cover; margin:5px;
 
         @include only-phone {
-            width:calc(100vw - 48px); height:37.5vw; border-radius:12px; margin:0;
+            width:calc(100vw - 72px); height:37.5vw; border-radius:12px; margin:0;
         }
     }
     .title {

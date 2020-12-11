@@ -5,10 +5,13 @@
     display:grid; grid-template-columns:22.5vw 1fr 2.5vw 230px 5vw; grid-template-rows:auto auto;
     grid-template-areas:'. hero . . .' 'left-margin article middle-margin side-panel right-margin';
 
-    @include only-phone {
-        grid-template-rows:auto auto auto; grid-template-columns:12px 1fr 12px;
+    @include phone-and-tablet {
+        grid-template-rows:auto auto auto;
         grid-template-areas:'. hero .' 'left-margin article right-margin' 'left-margin side-panel right-margin';
     }
+    @include only-phone {grid-template-columns:12px 1fr 12px;}
+    @include only-tablet {grid-template-columns:10vw 1fr 10vw;}
+    @include only-narrow-laptop {grid-template-columns:7.5vw 1fr 2.5vw 230px 2.5vw;}
 }
 
 // Główny obrazek artykułu
@@ -63,6 +66,10 @@ article {
         box-shadow:var(--sp-box-shadow); font-size:0.95em; background:var(--sp-background);
 
         h2 {margin-top:0;}
+
+        @include only-tablet {
+            margin-left:auto; margin-right:auto; max-width:250px;
+        }
     }
 
     ul {
@@ -72,7 +79,7 @@ article {
 
     a {color:var(--sp-link-color);}
 
-    @include only-phone {
+    @include phone-and-tablet {
         padding:0; position:static;
     }
 }
