@@ -14,7 +14,7 @@ get_header();
                 $has_image = has_post_thumbnail();
                 ?>
                 <a href="<?php the_permalink(); ?>" class="category-link <?php if(!$has_image) echo('no-image') ?>">
-                    <?php if($has_image) the_post_thumbnail('thumbnail'); ?>
+                    <?php if($has_image) the_post_thumbnail('medium'); ?>
                     <span class="title"><?php the_title(); ?></span>
                     <span class="text"><?php the_excerpt(); ?></span>
                     <span class="date"><?php cybair_date_list_format(); ?></span>

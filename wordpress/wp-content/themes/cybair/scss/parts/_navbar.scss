@@ -16,6 +16,7 @@
 
         &.open {
             height:unset; background:var(--nav-elevated-background);
+            box-shadow:var(--nav-elevated-shadow);
 
             .main-navbar--links {display:block;}
         }
@@ -89,7 +90,7 @@
         }
 
         @include only-phone {
-            visibility:visible; position:relative; opacity:1; --nav-submenu-shadow:none;
+            visibility:visible; position:static; opacity:1; --nav-submenu-shadow:none;
             background:transparent; padding:0; margin:0;
         }
     }

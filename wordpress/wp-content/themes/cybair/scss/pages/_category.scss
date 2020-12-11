@@ -14,6 +14,11 @@
         font-size:0.85em; color:var(--text-secondary-color); margin-top:-14px; display:block;
         text-align:center;
     }
+
+    @include only-phone {
+        grid-template-rows:auto auto; grid-template-columns:12px 1fr 12px;
+        grid-template-areas:'left-margin main right-margin' 'left-margin side-panel right-margin';
+    }
 }
 
 // Link do wpisu
@@ -24,18 +29,28 @@
     padding:12px; margin:16px 0; transition:box-shadow 0.3s, background 0.3s;
 
     // Ilustracja
-    .attachment-thumbnail {
+    img {
         grid-area:image; width:70px; height:70px; place-self:center; border-radius:50%;
         object-fit:cover; margin:5px;
+
+        @include only-phone {
+            width:calc(100vw - 48px); height:37.5vw; border-radius:12px; margin:0;
+        }
     }
     .title {
         grid-area:title; font-size:1.75rem; font-family:'Roboto Slab','Rockwell Nova',Consolas,serif;
     }
     .text {
-        grid-area:subtitle;color:var(--text-secondary-color);
-    
+        grid-area:subtitle;color:var(--text-secondary-color); line-height:1.2em;
+
         p:first-child {margin-top:0;}
         p:last-child {margin-bottom:0;}
+
+        @include only-phone {
+            max-height:3.6em; overflow-y:hidden;
+
+            p:not(:first-child) {display:none;}
+        }
     }
     .date {grid-area:date; place-self:center end; font-size:0.9em;}
 
@@ -44,6 +59,11 @@
         grid-template-areas:'title date' 'subtitle subtitle';
     }
     &:hover {box-shadow:var(--cat-link-hover-shadow); background:var(--cat-link-hover-background);}
+
+    @include only-phone {
+        grid-template-columns:1fr auto; grid-template-rows:auto auto auto;
+        grid-template-areas:'image image' 'title date' 'subtitle subtitle';
+    }
 }
 
 // Linki do poszczególnych stron kategorii

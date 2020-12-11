@@ -4,6 +4,11 @@
 .article-root {
     display:grid; grid-template-columns:22.5vw 1fr 2.5vw 230px 5vw; grid-template-rows:auto auto;
     grid-template-areas:'. hero . . .' 'left-margin article middle-margin side-panel right-margin';
+
+    @include only-phone {
+        grid-template-rows:auto auto auto; grid-template-columns:12px 1fr 12px;
+        grid-template-areas:'. hero .' 'left-margin article right-margin' 'left-margin side-panel right-margin';
+    }
 }
 
 // Główny obrazek artykułu
@@ -42,6 +47,10 @@ article {
         }
     }
     .date {grid-column:3; text-align:right;}
+
+    @include only-phone {
+        .long {display:none;}
+    }
 }
 
 // Panel boczny
@@ -62,4 +71,8 @@ article {
     }
 
     a {color:var(--sp-link-color);}
+
+    @include only-phone {
+        padding:0; position:static;
+    }
 }

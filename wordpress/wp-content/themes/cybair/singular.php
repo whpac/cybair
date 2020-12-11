@@ -17,12 +17,16 @@ the_post();
             <?php the_title(); ?>
         </h1>
         <div class="article-subtitle">
-            <span class="author">Autor:
+            <span class="author">
+                <span class="long">Autor:</span>
                 <a href="<?php echo(get_author_posts_url(get_the_author_meta('ID'))); ?>">
                     <?php the_author(); ?>
                 </a>
             </span>
-            <span class="date">Opublikowano: <?php the_date(); ?> <?php the_time(); ?></span>
+            <span class="date">
+                <span class="long">Opublikowano:</span>
+                <?php the_date(); ?> <?php the_time(); ?>
+            </span>
         </div>
         <?php
             the_content();
