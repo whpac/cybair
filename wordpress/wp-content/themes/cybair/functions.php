@@ -1,7 +1,4 @@
 <?php
-wp_enqueue_style('style', get_stylesheet_uri());
-wp_enqueue_script('script', get_template_directory_uri().'/assets/script.js');
-
 add_action('after_setup_theme', 'cybair_theme_support');
 
 function cybair_theme_support(){
