@@ -113,6 +113,10 @@
         &.indent-by-half {grid-column-start:2;}
         &.indent-by-whole {grid-column-start:3;}
 
+        @include only-phone {
+            &.indent-by-half, &.indent-by-whole {grid-column-start:unset;}
+        }
+
         // Obrazek
         img {
             --image-size:calc(var(--hp-activity-tile-width) / 2); width:var(--image-size); height:var(--image-size);
@@ -210,7 +214,7 @@
 
     // Szerokie logo (bez podpisu)
     .logo-wide {
-        background:var(--hp-partner-logo-background); display:grid; align-content:center;
+        background:var(--hp-partner-logo-background); display:grid; place-content:center;
         margin:0 30vw; padding:12px 30px; text-align:center; border-radius:12px;
 
         img {
