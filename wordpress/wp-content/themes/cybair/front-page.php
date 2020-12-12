@@ -22,30 +22,27 @@ get_header();
     <div class="column-wrapper">
         <div class="link-grid-wrapper">
             <div class="link-grid">
-                <a class="activity" href="category.html">
-                    <img src="<?php echo(get_theme_file_uri('assets/activities1.jpg')); ?>" />
-                    <span class="subtitle">
-                        Konferencje i wydarzenia
-                    </span>
-                </a>
-                <a class="activity" href="category.html">
-                    <img src="<?php echo(get_theme_file_uri('assets/activities2.jpg')); ?>" />
-                    <span class="subtitle">
-                        Sekcje naukowe
-                    </span>
-                </a>
-                <a class="activity" href="category.html">
-                    <img src="<?php echo(get_theme_file_uri('assets/activities3.png')); ?>" />
-                    <span class="subtitle">
-                        Warsztaty
-                    </span>
-                </a>
-                <a class="activity" href="category.html">
-                    <img src="<?php echo(get_theme_file_uri('assets/activities4.jpg')); ?>" />
-                    <span class="subtitle">
-                        Projekty naukowe
-                    </span>
-                </a>
+                <?php
+                $locations = get_nav_menu_locations();
+                $menu = wp_get_nav_menu_object($locations['activities']);
+                $menu_items = wp_get_nav_menu_items($menu->term_id);
+
+                for($i = 0; $i < count($menu_items) && $i < 4; $i++){
+                    ?>
+                    <a class="activity <?php if($i == 2 && count($menu_items) == 3) echo('indent-by-half'); ?>"
+                        href="<?php echo($menu_items[$i]->url); ?>">
+                        <img src="<?php echo(get_theme_file_uri('assets/corobimy_'.($i+1).'.jpg')); ?>" />
+                        <span class="subtitle">
+                            <?php echo($menu_items[$i]->title); ?>
+                        </span>
+                    </a>
+                    <?php
+                }
+
+                echo('<!--');
+                print_r($menu_items);
+                echo('-->');
+                ?>
             </div>
         </div>
         <div class="recent-posts">

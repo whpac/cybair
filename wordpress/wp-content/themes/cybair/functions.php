@@ -35,7 +35,8 @@ add_filter('get_the_archive_title', 'cybair_archive_title');
 
 function cybair_menus() {
     $locations = array(
-        'primary'  => 'Menu główne',
+        'primary' => 'Menu główne',
+        'activities' => 'Sekcja „Co robimy”'
     );
 
     register_nav_menus($locations);
