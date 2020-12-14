@@ -23,7 +23,7 @@
             </button>
             <ul class="main-navbar--links">
                 <?php
-                if(has_nav_menu( 'primary')){
+                if(has_nav_menu('primary')){
                     wp_nav_menu(
                         array(
                             'container'  => '',

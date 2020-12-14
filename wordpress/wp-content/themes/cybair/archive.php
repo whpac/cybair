@@ -33,7 +33,7 @@ get_header();
             )
         );
 
-        if(count($posts_pagination) > 0){
+        if(is_array($posts_pagination) && count($posts_pagination) > 0){
             ?>
             <div class="page-selector">
                 <span class="prev-section">
