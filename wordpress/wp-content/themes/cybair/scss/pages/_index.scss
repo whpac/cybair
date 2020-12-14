@@ -192,6 +192,7 @@
             padding:0 30px;
         }
         @include only-tablet {padding:0 5vw;}
+        @include only-narrow-laptop {padding:0 5vw;}
     }
     .column {
         text-align:center; font-size:1.2em; line-height:1.4em;
