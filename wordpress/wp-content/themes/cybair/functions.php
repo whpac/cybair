@@ -7,9 +7,9 @@ function cybair_theme_support(){
 
 function cybair_date_list_format(){
     if(date('Yz') == get_the_time('Yz')){
-        the_time('H:i');
+        echo(get_the_time('H:i'));
     }else{
-        the_date('d.m.Y'); 
+        echo(get_the_date('d.m.Y')); 
     }
 }
 
