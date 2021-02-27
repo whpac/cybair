@@ -1,5 +1,5 @@
 # Projekt strony dla CybAiR
 
-Wersja jasna: https://server111335.nazwa.pl/cybair/index.html
+Projekt znajduje się pod adresem: https://server111335.nazwa.pl/cybair/
 
-Wersja ciemna: https://server111335.nazwa.pl/cybair/index.dark.html
+Wspiera zarówno skórkę jasną jak i ciemną - to, która zostanie użyta zależy od ustawień przeglądarki
