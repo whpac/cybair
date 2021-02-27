@@ -12,7 +12,7 @@ get_header();
     <span class="subtitle">
         <span class="area-of-interest">Robotyka</span>
         <span class="accent-color separator">&bull;</span>
-        <span class="area-of-interest">Pojazy autonomiczne</span>
+        <span class="area-of-interest">Pojazdy autonomiczne</span>
         <span class="accent-color separator">&bull;</span>
         <span class="area-of-interest">Automatyka</span>
     </span>
